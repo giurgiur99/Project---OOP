@@ -9,6 +9,7 @@ public class UserMenu extends JFrame{
     private JPanel userSelction;
     private JComboBox whatOperationWouldYouComboBox;
     private JButton userNext;
+    private JPanel addCar;
 
     public UserMenu(String title) {
         super(title);
@@ -20,9 +21,6 @@ public class UserMenu extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 int getIndex = whatOperationWouldYouComboBox.getSelectedIndex();
                 System.out.println(getIndex);
-                userSelction.setVisible(false);
-                whatOperationWouldYouComboBox.setVisible(false);
-                userNext.setVisible(false);
             }
         });
     }
