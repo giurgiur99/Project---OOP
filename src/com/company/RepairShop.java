@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class RepairShop extends JFrame {
     private JPanel UserPanel;
@@ -13,7 +14,7 @@ public class RepairShop extends JFrame {
     private JLabel usernameLabel;
     private JButton loginBtn;
 
-    public RepairShop(String title) {
+    public RepairShop(String title, ArrayList<CarData> carList) {
        super(title);
        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        this.setContentPane(MainPanel);
@@ -29,7 +30,7 @@ public class RepairShop extends JFrame {
 
                 if(username.equals("user1"))
                 {
-                        JFrame UserMenu = new UserMenu("UserMenu");
+                        JFrame UserMenu = new UserMenu("UserMenu", carList);
                         UserMenu.setVisible(true);
                         UserMenu.setLocationRelativeTo(null);
                         UserMenu.setBounds(100,100,400,400);
@@ -41,7 +42,9 @@ public class RepairShop extends JFrame {
 
    public static void main(String[] args)
    {
-       JFrame frame = new RepairShop("MyRepairShop");
+       ArrayList<CarData> carList = new ArrayList<CarData>();
+       populateCarData.populate(carList);
+       JFrame frame = new RepairShop("MyRepairShop", carList);
        frame.setLocationRelativeTo(null);
        frame.setBounds(100,100,400,400);
        frame.setVisible(true);

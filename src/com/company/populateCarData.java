@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class populateCarData  {
+public class populateCarData {
     public static void populate(ArrayList<CarData> carList)
     {
         try {
